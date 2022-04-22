@@ -1,17 +1,17 @@
-let userInput = prompt('Deposit money or Withdraw money')
-let getMoney = 'Withdraw money'
-let giveMoney = "Deposit money"
-let moneyGained = 700
-let moneyLossed = 300
+let name = ['Mario', 'Luigi', 'Peach', 'Daisy', 'Waluigi']
+
+let wins = [10, 8, 6, 4, 2]
 
 
-if (userInput == giveMoney) {
-    console.log(prompt(`How much would you like to deposit? `))
-    alert(`Your new balance is ${moneyGained}`)
-}
-else if (getMoney == getMoney) {
-    console.log(prompt(`How much would you like to Withdraw?`))
-    alert(`Your new balance is ${moneyLossed}`)
+let champion = [name[0] > name[1], name[1] > name[2],
+name[2] > name[3], name[3] > name[4], name[4] > name[5]]
+
+function newCharacterUnlocked() {
+    return name.push('Bowser')
 }
 
+if (champion[0]) {
+    newCharacterUnlocked
+    console.log('Bowser has joined the Roster!!')
+}
 
