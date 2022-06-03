@@ -1,48 +1,32 @@
-//Friday ES6 in class coding assignment.  Please copy and paste your code into the text-box.
+// Create a function that takes two dates and returns
+//  the number of days between the first and second date
 
 
-//1 Convert the following function into an arrow function named "arrowMyFunction".
-// const myFunction = function (num1, num2) {
-//     return num1 + num2;
-// };
-//Arrow Function 
-const arrowMyFunction = (num1, num2) => {
-    return num1 + num2
+//Creating 2 variables to make dates using Date Object
+
+let date1 = new Date('October 19, 1997 12:00:00')
+
+let date2 = new Date('October 27, 2000 12:00:00')
+
+//Creating a Variable that Must Convert the dates 
+// down to milliseconds using .getTime() to get the 
+// differnce in milliseconds
+
+let differnceTime = date2.getTime() - date1.getTime()
+
+//Reconverting the miliseconds to days 
+
+let differneceDays = differnceTime / (1000 * 60 * 60 * 24)
+
+function getDays(date1, date2) {
+    let day1 = new Date(date1)
+    let day2 = new Date(date2)
+
+    let timeDif = day1.getTime() - day2.getTime()
+
+    let dayDif = timeDif / (1000 * 60 * 60 * 24)
+
+    return dayDif
 }
 
-console.log(arrowMyFunction(9, 10))
-//2 Convert the following function into a one-lined arrow function without a return statement (the return is implicit) . Name the function arrowAdd100
-// const add100 = function (money) {
-//     return money + 100;
-// };
-
-const add100 = money => money + 100;
-
-console.log(add100(3000))
-
-//3 Create an arrow function that takes TWO arguments, 
-// a string and a single letter. 
-//  The function will count the number of times the 
-// specified letter occurs in the string.
-
-
-let countLetters = (phrase, letter) => {
-    let count = 0;
-    for (let i = 0; i <= phrase.length; i++) {
-        if (phrase.charAt(i) == letter) {
-            count += 1
-        }
-
-    }
-    return count;
-}
-
-//phrase is the sentence
-// letter is how many letters of a specific one is in the sentence
-
-console.log(countLetters('Jodi, Jordon and Justin are the Goats', 'J'))
-
-
-
-
-
+console.log(getDays('October 19, 2000 12:00:00', 'October 18, 2000 12:00:00'))
